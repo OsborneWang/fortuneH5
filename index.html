@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>摩利生活 | 时运财运预测</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>✨ 摩利生活 | 时运财运预测 ✨</h1>
+            <p class="subtitle">输入您的信息，为您测算近期运势</p>
+        </header>
+
+        <main class="main-content">
+            <form id="fortuneForm" class="fortune-form">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">性别</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male" required>
+                            <span>男</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female" required>
+                            <span>女</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">出生年月</label>
+                    <input type="month" id="birthdate" name="birthdate" required>
+                </div>
+
+                <button type="submit" class="submit-btn">开始测算</button>
+            </form>
+
+            <div id="result" class="result hidden">
+                <div class="result-header">
+                    <h2>测算结果</h2>
+                    <div class="user-info">
+                        <p><span class="label">姓名：</span><span id="resultName"></span></p>
+                        <p><span class="label">性别：</span><span id="resultGender"></span></p>
+                        <p><span class="label">生肖：</span><span id="resultZodiac"></span></p>
+                        <p><span class="label">星座：</span><span id="resultConstellation"></span></p>
+                    </div>
+                </div>
+
+                <div class="fortune-section">
+                    <div class="fortune-card">
+                        <div class="fortune-icon">🌟</div>
+                        <h3>近期时运</h3>
+                        <div class="fortune-level">
+                            <div class="level-bar">
+                                <div class="level-fill" id="luckLevel"></div>
+                            </div>
+                            <span class="level-text" id="luckText"></span>
+                        </div>
+                        <p class="fortune-desc" id="luckDesc"></p>
+                    </div>
+
+                    <div class="fortune-card">
+                        <div class="fortune-icon">💰</div>
+                        <h3>近期财运</h3>
+                        <div class="fortune-level">
+                            <div class="level-bar">
+                                <div class="level-fill" id="wealthLevel"></div>
+                            </div>
+                            <span class="level-text" id="wealthText"></span>
+                        </div>
+                        <p class="fortune-desc" id="wealthDesc"></p>
+                    </div>
+                </div>
+
+                <button class="reset-btn" onclick="resetForm()">重新测算</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>测算结果仅供参考</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
